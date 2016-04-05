@@ -7,4 +7,5 @@ public interface Floor {
     String getColor();
 
     double getPrice();
+//    Floor getFloor();
 }

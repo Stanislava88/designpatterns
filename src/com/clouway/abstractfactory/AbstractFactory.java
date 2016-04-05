@@ -9,4 +9,5 @@ public abstract class AbstractFactory {
     public abstract Door getDoor(String type, String color, double price);
 
     public abstract Floor getFloor(String type, String color, double price);
+//    public abstract FloorFactory getFloorFactory(String type, String color, double price);
 }
