@@ -6,7 +6,7 @@ package com.clouway.factory_method;
 public class LaminateFloor implements Floor {
 
     @Override
-    public void getColor() {
-        System.out.println("The color pf laminate floor is brown");
+    public String getColor() {
+        return "The color for laminate floor is brown";
     }
 }

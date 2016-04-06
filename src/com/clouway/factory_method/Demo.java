@@ -6,18 +6,19 @@ package com.clouway.factory_method;
 public class Demo {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
         WindowFactory windowFactory = new WindowFactory();
+        DoorFactory doorFactory = new DoorFactory();
+        FloorFactory floorFactory = new FloorFactory();
+
         Window window = windowFactory.getWindow("wooden", "brown");
         System.out.println(window);
 
-        DoorFactory doorFactory = new DoorFactory();
         Door door = doorFactory.getDoor("wooden", "brown");
-        System.out.println(door.getColor());
+        System.out.println(door);
 
-        FloorFactory floorFactory = new FloorFactory();
         Floor floor = floorFactory.getFloor("Laminate");
-        floor.getColor();
+        System.out.println(floor.getColor());
 
         Floor floor1 = floorFactory.getFloor("wooden");
-        floor1.getColor();
+        System.out.println(floor1.getColor());
     }
 }

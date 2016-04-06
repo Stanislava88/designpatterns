@@ -5,7 +5,7 @@ package com.clouway.factory_method;
  */
 public class WoodenFloor implements Floor {
     @Override
-    public void getColor() {
-        System.out.println("This floor is from wooden");
+    public String getColor() {
+        return "This floor is wooden";
     }
 }
