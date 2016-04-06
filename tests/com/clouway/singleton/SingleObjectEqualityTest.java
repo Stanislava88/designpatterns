@@ -15,6 +15,6 @@ public class SingleObjectEqualityTest {
         SingleObject singleObject1 = SingleObject.getInstance();
         SingleObject singleObject2 = SingleObject.getInstance();
 
-        assertThat(singleObject1,is(singleObject2));
+        assertThat(singleObject1, is(singleObject2));
     }
 }

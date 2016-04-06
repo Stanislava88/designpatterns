@@ -6,13 +6,10 @@ package com.clouway.singleton;
 public class SingleObject {
     private static SingleObject ourInstance = new SingleObject();
 
-    private SingleObject() {}
+    private SingleObject() {
+    }
 
     public static SingleObject getInstance() {
         return ourInstance;
-    }
-
-    public void showMessage(){
-        System.out.println("Hello from singleton");
     }
 }
