@@ -3,7 +3,7 @@ package com.clouway.abstractfactory;
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-public class FloorFactory extends AbstractFactory {
+public class FloorFactory extends HousePartFactory {
     private String type1 = "laminate";
     private String type2 = "wooden";
 

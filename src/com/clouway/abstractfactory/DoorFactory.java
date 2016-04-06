@@ -3,7 +3,7 @@ package com.clouway.abstractfactory;
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-public class DoorFactory extends AbstractFactory {
+public class DoorFactory extends HousePartFactory {
     private String type1 = "wooden";
     private String type2 = "aluminium";
 
@@ -23,7 +23,7 @@ public class DoorFactory extends AbstractFactory {
     }
 
     @Override
-    public Floor getFloor(String type,String color,double price) {
+    public Floor getFloor(String type, String color, double price) {
         return null;
     }
 }

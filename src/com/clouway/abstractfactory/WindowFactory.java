@@ -3,7 +3,7 @@ package com.clouway.abstractfactory;
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-public class WindowFactory extends AbstractFactory {
+public class WindowFactory extends HousePartFactory {
     private static String type1 = "wooden";
     private static String type2 = "aluminium";
 

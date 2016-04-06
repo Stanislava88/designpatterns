@@ -5,14 +5,14 @@ package com.clouway.abstractfactory;
  */
 public class Demo {
     public static void main(String[] args) {
-        AbstractFactory winFactory = FactoryProducer.getFactory("window");
-        assert winFactory != null;
-        AbstractFactory doorFactory = FactoryProducer.getFactory("door");
+        HousePartFactory windowFactory = AbstractFactory.getFactory("window");
+        assert windowFactory != null;
+        HousePartFactory doorFactory = AbstractFactory.getFactory("door");
         assert doorFactory != null;
-        AbstractFactory floorFactory = FactoryProducer.getFactory("floor");
+        HousePartFactory floorFactory = AbstractFactory.getFactory("floor");
         assert floorFactory != null;
 
-        Window window = winFactory.getWindow("wooden", "white", 100);
+        Window window = windowFactory.getWindow("wooden", "white", 100);
         System.out.println(window);
 
         Door door = doorFactory.getDoor("wooden", "brown", 200);
@@ -20,8 +20,5 @@ public class Demo {
 
         Door door1 = doorFactory.getDoor("aluminium", "white", 150);
         System.out.println(door1);
-
-        Floor floor = floorFactory.getFloor("laminate", "brown", 1000);
-        System.out.println(floor);
     }
 }
