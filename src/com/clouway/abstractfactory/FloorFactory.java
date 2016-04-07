@@ -21,6 +21,7 @@ public class FloorFactory extends HousePartFactory {
     public Floor getFloor(String type, String color, double price) {
         if (type.equalsIgnoreCase(type1)) {
             return new LaminateFloor(color, price);
+
         } else if (type.equalsIgnoreCase(type2)) {
             return new WoodenFloor(color, price);
         }

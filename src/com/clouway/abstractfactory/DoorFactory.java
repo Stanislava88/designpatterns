@@ -16,6 +16,7 @@ public class DoorFactory extends HousePartFactory {
     public Door getDoor(String type, String color, double price) {
         if (type.equalsIgnoreCase(type1)) {
             return new WoodenDoor(color, price);
+
         } else if (type.equalsIgnoreCase(type2)) {
             return new AluminiumDoor(color, price);
         }
