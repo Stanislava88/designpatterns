@@ -1,7 +1,7 @@
 package com.clouway.abstractfactory;
 
 /**
- * The implementation of this interface will be used to get color to window
+ * The implementation of this interface will be used to get window information
  *
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */

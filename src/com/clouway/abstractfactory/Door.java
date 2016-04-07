@@ -1,7 +1,7 @@
 package com.clouway.abstractfactory;
 
 /**
- * The implementation of this interface will be used to get color to door
+ * The implementation of this interface will be used to get door information
  *
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */

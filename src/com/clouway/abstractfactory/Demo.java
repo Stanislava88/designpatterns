@@ -18,7 +18,7 @@ public class Demo {
         Door door = doorFactory.getDoor("wooden", "brown", 200);
         System.out.println(door);
 
-        Door door1 = doorFactory.getDoor("aluminium", "white", 150);
-        System.out.println(door1);
+        Floor floor = floorFactory.getFloor("laminate", "brown", 300);
+        System.out.println(floor);
     }
 }

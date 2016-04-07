@@ -4,9 +4,6 @@ package com.clouway.abstractfactory;
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
 public class DoorFactory extends HousePartFactory {
-    private String type1 = "wooden";
-    private String type2 = "aluminium";
-
     @Override
     public Window getWindow(String type, String color, double price) {
         return null;
@@ -14,11 +11,8 @@ public class DoorFactory extends HousePartFactory {
 
     @Override
     public Door getDoor(String type, String color, double price) {
-        if (type.equalsIgnoreCase(type1)) {
+        if (type.equalsIgnoreCase("wooden")) {
             return new WoodenDoor(color, price);
-
-        } else if (type.equalsIgnoreCase(type2)) {
-            return new AluminiumDoor(color, price);
         }
         return null;
     }
