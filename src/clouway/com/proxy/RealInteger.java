@@ -5,17 +5,15 @@ import java.lang.*;
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-public class IntegerProxy implements Integer {
+public class RealInteger implements Integer {
     private int number;
-    private RealInteger realInteger;
 
-    public IntegerProxy(int number) {
+    public RealInteger(int number) {
         this.number = number;
     }
 
     @Override
     public void display() {
-        realInteger = new RealInteger(number);
-        realInteger.display();
+        System.out.println("Number is" + number);
     }
 }
