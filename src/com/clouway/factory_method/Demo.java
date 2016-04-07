@@ -17,8 +17,5 @@ public class Demo {
 
         Floor floor = floorFactory.getFloor("Laminate");
         System.out.println(floor.getColor());
-
-        Floor floor1 = floorFactory.getFloor("wooden");
-        System.out.println(floor1.getColor());
     }
 }

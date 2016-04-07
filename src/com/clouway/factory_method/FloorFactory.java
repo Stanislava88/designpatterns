@@ -9,10 +9,6 @@ public class FloorFactory {
 
             //todo: here i have implementations of this pattern using reflection
             return LaminateFloor.class.newInstance();
-
-        } else if (type.equalsIgnoreCase("wooden")) {
-
-            return WoodenFloor.class.newInstance();
         }
         return null;
     }
