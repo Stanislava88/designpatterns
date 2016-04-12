@@ -6,22 +6,22 @@ import java.util.List;
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-public class ObjectPool {
-    private List<PooledObject> available = new ArrayList<PooledObject>();
-    private List<PooledObject> inUse = new ArrayList<PooledObject>();
+public class IpPool {
+    private List<IP> available = new ArrayList<IP>();
+    private List<IP> inUse = new ArrayList<IP>();
     private int maxSize;
 
-    public ObjectPool(int maxSize) {
+    public IpPool(int maxSize) {
         this.maxSize = maxSize;
     }
 
-    public synchronized PooledObject acquire() throws Exception {
+    public synchronized IP acquire() throws Exception {
         int size = available.size();
 
         if (size != 0) {
 
             for (int i = 0; i < available.size(); i++) {
-                PooledObject instance = available.get(i);
+                IP instance = available.get(i);
 
                 available.remove(instance);
 
@@ -30,14 +30,14 @@ public class ObjectPool {
             }
         } else if (size + inUse.size() < maxSize) {
 
-            PooledObject po = new PooledObject();
+            IP po = new IP();
             inUse.add(po);
             return po;
         }
         throw new NoFreeResourceException("Don't have free resource");
     }
 
-    public synchronized void release(PooledObject instance) {
+    public synchronized void release(IP instance) {
         inUse.remove(instance);
         available.add(instance);
     }

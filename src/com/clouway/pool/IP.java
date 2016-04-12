@@ -5,17 +5,17 @@ import java.util.Random;
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-public class PooledObject {
+public class IP {
     private String ip;
     Random r = new Random();
 
-    public PooledObject() {
+    public IP() {
         ip = r.nextInt(256) + "." + r.nextInt(256) + "." + r.nextInt(256) + "." + r.nextInt(256);
     }
 
     @Override
     public String toString() {
-        return "PooledObject{" +
+        return "IP{" +
                 "ip='" + ip + '\'' +
                 '}';
     }
