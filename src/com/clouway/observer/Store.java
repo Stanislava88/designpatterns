@@ -8,33 +8,23 @@ import java.util.List;
  */
 public class Store implements Subject {
     private List<Observer> observers = new ArrayList<Observer>();
-    private Adder adder;
-    private Seller seller;
-    private Product product;
-
-    public Store(Adder adder, Seller seller, Product product) {
-        this.adder = adder;
-        this.seller = seller;
-        this.product = product;
-    }
-
-    public void bought(String productName, int quantity) {
-        adder.update(productName, quantity);
-    }
-
-    public void sell(String productName, int quantity) {
-        seller.update(productName, quantity);
-    }
 
     @Override
-    public void registerObserver(Observer observer) {
+    public void register(Observer observer) {
         observers.add(observer);
     }
 
     @Override
-    public synchronized void notifyObservers() {
+    public void notifyBySell(String productName, int quantity) {
         for (Observer observer : observers) {
-            observer.update(product.getProductName(), product.getQuantity());
+            observer.sell(productName, quantity);
+        }
+    }
+
+    @Override
+    public void notifyByBought(String productName, int quantity) {
+        for (Observer observer : observers) {
+            observer.bought(productName, quantity);
         }
     }
 }

@@ -14,12 +14,17 @@ public class Adder implements Observer {
     }
 
     @Override
-    public void update(String productName, int quantity) {
+    public void bought(String productName, int quantity) {
         for (Product product : products) {
             if (product.getProductName().equals(productName)) {
-                product.buy(quantity);
-                System.out.println("Update product: " + product.getProductName() + " Quantity after bought is: " + product.getQuantity());
-            } else System.out.println("New product is added: " + productName + " Quantity: " + quantity);
+                product.bought(quantity);
+                System.out.println("After bought new quantity for product " + product.getProductName() + " is " + product.getQuantity());
+            } else System.out.println("New product is added " + productName + "q:" + quantity);
         }
+    }
+
+    @Override
+    public void sell(String productName, int quantity) {
+
     }
 }

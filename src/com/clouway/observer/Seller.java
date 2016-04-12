@@ -1,6 +1,5 @@
 package com.clouway.observer;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,15 +13,19 @@ public class Seller implements Observer {
         this.products = products;
     }
 
-
     @Override
-    public void update(String productName, int quantity) {
+    public void sell(String productName, int quantity) {
         for (Product product : products) {
             if (product.getProductName().equals(productName)) {
                 product.sell(quantity);
-                System.out.println("Update product: " + product.getProductName() + " Quantity after sell is: " + product.getQuantity());
+                System.out.println("After sell new quantity for product " + product.getProductName() + " is " + product.getQuantity());
             } else System.out.println("This product is not available");
         }
+    }
+
+    @Override
+    public void bought(String productName, int quantity) {
+
     }
 }
 

@@ -3,8 +3,11 @@ package com.clouway.observer;
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-public interface Subject {
-    void registerObserver(Observer observer);
+interface Subject {
+    void register(Observer observer);
 
-    void notifyObservers() throws InstantiationException, IllegalAccessException;
+    void notifyBySell(String productName, int quantity);
+
+    void notifyByBought(String productName, int quantity);
 }
+

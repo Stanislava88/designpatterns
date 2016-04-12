@@ -3,28 +3,28 @@ package com.clouway.observer;
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-public class Product  {
+public class Product {
     private String productName;
     private int quantity;
 
-    public Product(String productName, int quantity) {
+    public Product(String productName, int quantity1) {
         this.productName = productName;
-        this.quantity = quantity;
+        this.quantity = quantity1;
     }
 
-    public void sell(int quantity) {
-        this.quantity -= quantity;
-    }
-
-    public void buy(int quantity) {
-        this.quantity += quantity;
+    public String getProductName() {
+        return productName;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public String getProductName() {
-        return productName;
+    public void sell(int quantity) {
+        this.quantity -= quantity;
+    }
+
+    public void bought(int quantity) {
+        this.quantity += quantity;
     }
 }
