@@ -15,16 +15,16 @@ public class Store implements Subject {
     }
 
     @Override
-    public void notifyBySell(String productName, int quantity) {
+    public void notifyBySell(Product product, int quantity) {
         for (Observer observer : observers) {
-            observer.sell(productName, quantity);
+            observer.sell(product, quantity);
         }
     }
 
     @Override
-    public void notifyByBought(String productName, int quantity) {
+    public void notifyByBought(Product product, int quantity) {
         for (Observer observer : observers) {
-            observer.bought(productName, quantity);
+            observer.bought(product, quantity);
         }
     }
 }

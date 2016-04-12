@@ -14,17 +14,16 @@ public class Seller implements Observer {
     }
 
     @Override
-    public void sell(String productName, int quantity) {
-        for (Product product : products) {
-            if (product.getProductName().equals(productName)) {
-                product.sell(quantity);
-                System.out.println("After sell new quantity for product " + product.getProductName() + " is " + product.getQuantity());
-            } else System.out.println("This product is not available");
-        }
+    public void sell(Product product, int quantity) {
+        if (!products.contains(product)) {
+            System.out.println("This product is not available");
+
+        } else product.sell(quantity);
+        System.out.println("After sell new quantity for product " + product.getProductName() + " is " + product.getQuantity());
     }
 
     @Override
-    public void bought(String productName, int quantity) {
+    public void bought(Product product, int quantity) {
 
     }
 }

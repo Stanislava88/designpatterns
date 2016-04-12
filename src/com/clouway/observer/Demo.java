@@ -8,14 +8,18 @@ import java.util.List;
  */
 public class Demo {
     public static void main(String[] args) {
+        Product product1 = new Product("product1", 20);
+        Product product2 = new Product("product2", 20);
+
         List<Product> products = new ArrayList<Product>();
-        products.add(new Product("car", 10));
+        products.add(product1);
 
         Store store = new Store();
-        store.register(new Adder(products));
+        store.register(new Provider(products));
         store.register(new Seller(products));
 
-        store.notifyByBought("car", 2);
-        store.notifyBySell("car", 3);
+        store.notifyByBought(product1, 2);
+        store.notifyBySell(product1, 3);
+        store.notifyByBought(product2, 20);
     }
 }

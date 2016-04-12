@@ -1,13 +1,22 @@
 package com.clouway.observer;
 
 /**
- * The implementation of this interface will be used for
+ * The implementation of this interface will be used for observe
  *
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
 interface Observer {
-    void bought(String productName, int quantity);
+    /**
+     * @param product  the purchased product
+     * @param quantity the quantity of the purchased product
+     */
+    void bought(Product product, int quantity);
 
-    void sell(String productName, int quantity);
+    /**
+     * @param product  the sold product
+     * @param quantity the quantity of the sold product
+     */
+
+    void sell(Product product, int quantity);
 }
 
