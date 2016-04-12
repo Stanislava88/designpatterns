@@ -6,7 +6,7 @@ package clouway.com.proxy;
 public class Demo {
     public static void main(String[] args) {
         IntegerFactory factory = new IntegerFactory();
-        Integer integer = factory.getIntegerProxy(10);
+        Integer integer = factory.createInstance(10);
         integer.display();
     }
 }
