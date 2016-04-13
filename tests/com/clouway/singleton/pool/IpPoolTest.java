@@ -14,10 +14,10 @@ import static org.junit.Assert.assertThat;
 public class IpPoolTest {
     @Test
     public void happyPath() throws Exception {
-        IpPool ipPool = new IpPool(2);
+        IpPool ipPool = new IpPool(5);
 
         String actual = ipPool.toString();
-        String expected = "available=0" + ", inUse=0";
+        String expected = "Available: 5";
 
         assertThat(actual, is(expected));
     }
@@ -29,7 +29,7 @@ public class IpPoolTest {
         ipPool.acquire();
 
         String actual = ipPool.toString();
-        String expected = "available=0" + ", inUse=1";
+        String expected = "Available: 1";
 
         assertThat(actual, is(expected));
     }
@@ -42,7 +42,7 @@ public class IpPoolTest {
         ipPool.release(ip);
 
         String actual = ipPool.toString();
-        String expected = "available=1" + ", inUse=0";
+        String expected = "Available: 2";
 
         assertThat(actual, is(expected));
     }

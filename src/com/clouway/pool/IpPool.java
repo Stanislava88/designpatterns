@@ -1,50 +1,45 @@
 package com.clouway.pool;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
 public class IpPool {
-    private List<IP> available = new ArrayList<IP>();
-    private List<IP> inUse = new ArrayList<IP>();
-    private int maxSize;
+    private Queue<IP> ips;
+    private Integer maxNum;
+    private int acquired = 0;
 
-    public IpPool(int maxSize) {
-        this.maxSize = maxSize;
-    }
+    public IpPool(Integer maxNum) {
+        ips = new LinkedList<IP>();
 
-    public synchronized IP acquire() throws Exception {
-        int size = available.size();
-
-        if (size != 0) {
-
-            for (int i = 0; i < available.size(); i++) {
-                IP instance = available.get(i);
-
-                available.remove(instance);
-
-                inUse.add(instance);
-                return instance;
-            }
-        } else if (size + inUse.size() < maxSize) {
-
-            IP po = new IP();
-            inUse.add(po);
-            return po;
+        for (int i = 0; i < maxNum; i++) {
+            ips.add(new IP());
         }
-        throw new NoFreeResourceException("Don't have free resource");
+        this.maxNum = maxNum;
     }
 
-    public synchronized void release(IP instance) {
-        inUse.remove(instance);
-        available.add(instance);
+    public IP acquire() {
+        if (maxNum > acquired) {
+
+            acquired++;
+
+            return ips.poll();
+        } else
+            throw new NoFreeResourceException("Don't have free resource");
+    }
+
+    public void release(IP ip) {
+        if (acquired < maxNum) {
+            ips.add(ip);
+        }
     }
 
     @Override
     public String toString() {
-        return "available=" + available.size() +
-                ", inUse=" + inUse.size();
+        return "Available: " + ips.size();
     }
 }
