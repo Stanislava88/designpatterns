@@ -10,7 +10,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class IpPool {
     private Queue<IP> ips;
-    private Integer maxNum;
+    private final Integer maxNum;
     private int acquired = 0;
 
     public IpPool(Integer maxNum) {
@@ -29,7 +29,7 @@ public class IpPool {
 
             return ips.poll();
         } else
-            throw new NoFreeResourceException("Don't have free resource");
+            throw new NoFreeResourceException();
     }
 
     public void release(IP ip) {
