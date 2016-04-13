@@ -44,9 +44,7 @@ public class IpPool {
 
     @Override
     public String toString() {
-        return "{" +
-                "available=" + available +
-                ", inUse=" + inUse +
-                '}';
+        return "available=" + available.size() +
+                ", inUse=" + inUse.size();
     }
 }
