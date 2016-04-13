@@ -15,12 +15,12 @@ interface Subject {
      * @param product  product that is purchased
      * @param quantity the quantity of the purchased product
      */
-    void notifyByBought(Product product, int quantity);
+    void notifyBought(Product product, int quantity);
 
     /**
      * @param product  product that is sold
      * @param quantity sold quantity of product
      */
-    void notifyBySell(Product product, int quantity);
+    void notifySell(Product product, int quantity);
 }
 
